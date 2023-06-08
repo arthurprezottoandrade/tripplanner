@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" type="text/css" href="CSS/atualizar.css">
-        <title>Atualização de Cachorro - Help Friend</title>
+        <title>Atualização de Usuário - Tripp Planner</title>
         <link rel="icon" type="image/jpg" href="IMG/logo_icone.jpg"/>
     </head>
     <body>
@@ -79,7 +79,7 @@
             ?>
             <!-- FORMULÁRIO -->
             <div class="formatualiza">
-                <form id="cadastro" action="atualizacachorro_exe.php" method="post" onsubmit="return check(this.form)" enctype="multipart/form-data">
+                <form id="cadastro" action="atualizaLocal_exe.php" method="post" onsubmit="return check(this.form)" enctype="multipart/form-data">
                     <input type="hidden" id="Id" name="Id" value="<?php echo $id_cachorro; ?>">
                     <div class="form">
                         <label for="text" style="color: black;"><b>ATUALIZAÇÃO DE CACHORRO</b></label>
@@ -233,7 +233,7 @@
         <footer>
             <header class="linha-divisao"></header>
             <img class="img-rodape" src="IMG/logo_verticalpng.png">
-            <p class="copyright">&copy; Copyright Help Friend - 2022</p>
+            <p class="copyright">&copy; Copyright Tripp Planner - 2023</p>
         </footer>
     </body>
 </html>

@@ -3,7 +3,7 @@
 	  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	  <link rel="stylesheet" type="text/css" href="CSS/reservar.css"/>
       <link rel="icon" type="image/jpg" href="IMG/logo_icone.jpg"/>
-      <title>Reserva de Cachorro - Help Friend</title>
+      <title>Reserva de Cachorro - Tripp Planner</title>
 	</head>
     <header class="cabecalho">
             <div>
@@ -78,7 +78,7 @@
                                 } else if (mysqli_num_rows($result) == 0){
                                     echo "O cadastro não existe no banco";
                                 } else {
-                                    echo "Erro executando a reserva: " . mysqli_error($conn);
+                                    echo "Erro executando ALGUMA COISA AQUI: " . mysqli_error($conn);
                                 }
                                 echo "</div>";
                                 mysqli_close($conn);  //Encerra conexao com o BD
@@ -90,7 +90,7 @@
         <footer>
             <header class="linha-divisao"></header>
             <img class="img-rodape" src="IMG/logo_verticalpng.png">
-            <p class="copyright">&copy; Copyright Help Friend - 2022</p>
+            <p class="copyright">&copy; Copyright Tripp Planner - 2023</p>
         </footer>
     </body>
 </html>

@@ -4,7 +4,7 @@
 	  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	  <link rel="stylesheet" type="text/css" href="CSS/deletar.css"/>
 	  <link rel="icon" type="image/jpg" href="IMG/logo_icone.jpg"/>
-	  <title>Exclusão de Cachorro - Help Friend</title>
+	  <title>Exclusão de Local - Tripp Planner</title>
 	</head>
 	<!-- CABEÇALHO -->
 	<header class="cabecalho">
@@ -29,7 +29,7 @@
 				</li>
 				<li>
                     <a href="mostrarCachorro.php">
-                        <h3>MOSTRAR CACHORROS</h3>
+                        <h3>MOSTRAR LOCAIS</h3>
                     </a>
                 </li>
 			</ul>
@@ -47,7 +47,7 @@
 
 			<!-- Retângulo de Exclusão -->
 			<div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-			<h1 class="w3-xxlarge">Exclusão de Cachorros</h1>
+			<h1 class="w3-xxlarge">Exclusão de Locais</h1>
 
 			<p class="w3-large">
 				<div class="w3-code cssHigh notranslate">
@@ -96,7 +96,7 @@
 		<footer>
 			<header class="linha-divisao"></header>
 			<img class="img-rodape" src="IMG/logo_verticalpng.png">
-			<p class="copyright">&copy; Copyright Help Friend - 2022</p>
+			<p class="copyright">&copy; Copyright Tripp Planner - 2023</p>
 		</footer>
 	</body>
 </html>

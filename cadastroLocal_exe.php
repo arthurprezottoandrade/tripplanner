@@ -2,7 +2,7 @@
     <head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="CSS/cadastro.css">
-    <title>Cadastro de Cachorro - Help Friend</title>
+    <title>Cadastro de Local - Tripp Planner</title>
     <link rel="icon" type="image/jpg" href="IMG/logo_icone.jpg"/>
     </head>
     <body>
@@ -29,7 +29,7 @@
                     </li>
                     <li>
                     <a href="mostrarCachorro.php">
-                        <h3>MOSTRAR CACHORROS</h3>
+                        <h3>MOSTRAR LOCAIS</h3>
                     </a>
                 </li>
                 </ul>

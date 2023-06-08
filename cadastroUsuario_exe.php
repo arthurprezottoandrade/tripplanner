@@ -2,7 +2,7 @@
     <head>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="CSS/cadastro.css">
-    <title>Cadastro Adotante - Help Friend</title>
+    <title>Cadastro de Usuario - Tripp Planner</title>
     <link rel="icon" type="image/jpg" href="IMG/logo_icone.jpg"/>
 
     </head>
@@ -38,7 +38,7 @@
 
             <div class="w3-panel w3-padding-large w3-card-4 w3-light-brown">
         
-                <h1>Registro do Adotante</h1>
+                <h1>Registro do Usuário</h1>
                 <?php require 'conectaBD.php'; ?>
                 
                 <?php

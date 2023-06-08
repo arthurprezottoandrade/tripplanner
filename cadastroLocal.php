@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" type="text/css" href="CSS/cadastro.css">
-        <title>Cadastro de Cachorro - Help Friend</title>
+        <title>Cadastro de Local - Tripp Planner</title>
         <link rel="icon" type="image/jpg" href="IMG/logo_icone.jpg"/>
     </head>
     <body>
@@ -38,9 +38,9 @@
         <header class="linha-divisao"></header>
         <!-- FORMULÁRIO -->
         <div class="formcadastro">
-            <form id="cadastro" action="cadastroCachorro_exe.php" enctype="multipart/form-data" method="post">
+            <form id="cadastro" action="cadastroLocal_exe.php" enctype="multipart/form-data" method="post">
                 <div class="form">
-                    <label class="titulo-form" for="text"><b>CADASTRO DE CACHORRO</b></label>
+                    <label class="titulo-form" for="text"><b>CADASTRO DE LOCAL</b></label>
                     <label for="name"> Nome 
                         <input type="text" name="nome" required>
                     </label>
@@ -169,7 +169,7 @@
         <footer>
             <header class="linha-divisao"></header>
             <img class="img-rodape" src="IMG/logo_verticalpng.png">
-            <p class="copyright">&copy; Copyright Help Friend - 2022</p>
+            <p class="copyright">&copy; Copyright Tripp Planner - 2023</p>
         </footer>
         <?php 
             //FIM DA DIV FORM

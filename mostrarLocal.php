@@ -2,7 +2,7 @@
     <head>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" type="text/css" href="CSS/mostrar.css">
-        <title>Cachorros - Help Friend</title>
+        <title>Locais - Tripp Planner</title>
         <link rel="icon" type="image/jpg" href="IMG/logo_icone.jpg"/>
     </head>
     <!-- CABEÇALHO -->
@@ -29,7 +29,7 @@
                 </li>
                 <li>
                     <a href="cadastroCachorro.php">
-                        <h3>CADASTRAR CACHORRO</h3>
+                        <h3>CADASTRAR LOCAIS</h3>
                     </a>
                 </li>
             </ul>
@@ -45,7 +45,7 @@
         <div class="w3-container">
 
             <div class="w3-panel w3-padding-large w3-card-4 w3-light-dark">
-                <h1 class="w3-xxlarge"style="text-align: center">Cachorros</h1>
+                <h1 class="w3-xxlarge"style="text-align: center">Locais</h1>
 
                 <p class="w3-large"></p>
 
@@ -104,9 +104,9 @@
                                     echo "</td><td>";
                     ?>
                                 <!-- Atualizar e Excluir cachorro -->
-                                <a href='atualizacachorro.php?id=<?php echo $cod; ?>'><img src='IMG/editar.png' title='Editar Cachorro' width='32'></a>
+                                <a href='atualizaLocal.php?id=<?php echo $cod; ?>'><img src='IMG/editar.png' title='Editar Local' width='32'></a>
                                 </td><td>
-                                <a href='deletarCachorro.php?id=<?php echo $cod; ?>'><img src='IMG/excluir.png' title='Excluir Cachorro' width='32'></a>
+                                <a href='deletarLocal.php?id=<?php echo $cod; ?>'><img src='IMG/excluir.png' title='Excluir Local' width='32'></a>
                                 </td>
                                 </tr>
                     <?php
@@ -128,7 +128,7 @@
         <footer>
             <header class="linha-divisao"></header>
             <img class="img-rodape" src="IMG/logo_verticalpng.png">
-            <p class="copyright">&copy; Copyright Help Friend - 2022</p>
+            <p class="copyright">&copy; Copyright Tripp Planner - 2023</p>
         </footer>
     </body>
 </html>
