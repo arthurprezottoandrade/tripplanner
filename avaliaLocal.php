@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html> 
+<html>
     <head>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">    
         <link rel="stylesheet" type="text/css" href="CSS/reservar.css">
@@ -71,7 +71,7 @@
                 ?>
                 <!-- FORMULÁRIO -->
                 <div class="formconfirma">
-                    <form id="cadastro" action="reservaCachorro_exe.php" method="post" onsubmit="return check(this.form)" enctype="multipart/form-data">
+                    <form id="cadastro" action="avaliaLocal_exe.php" method="post" onsubmit="return check(this.form)" enctype="multipart/form-data">
                         <input type="hidden" id="Id" name="Id" value="<?php echo $id; ?>">  
                         <div class="form">
                             <label for="text" class="titulo-form" ><b>CONFIRMAÇÃO DE LOGIN</b></label>

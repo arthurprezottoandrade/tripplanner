@@ -3,7 +3,7 @@
 	  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	  <link rel="stylesheet" type="text/css" href="CSS/reservar.css"/>
       <link rel="icon" type="image/jpg" href="IMG/logo_icone.jpg"/>
-      <title>Reserva de Cachorro - Tripp Planner</title>
+      <title>Avaliar Local - Tripp Planner</title>
 	</head>
     <header class="cabecalho">
             <div>
