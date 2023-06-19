@@ -92,14 +92,15 @@
 
                             <?php require 'conectaBD.php'; ?>
                             <?php
-                                $id =  $_POST['Id'];
-                                $nome    = $_POST['nome'];
-                                $apelido    = $_POST['apelido'];
-                                $ano = $_POST['ano'];
-                                $porte = $_POST['porte'];
-                                $raca = $_POST['raca'];
-                                $apto = $_POST['apto'];
-                                $adotado = $_POST['adotado'];
+
+                                $id = $_POST['id'];
+                                $nome      = $_POST['nome'];
+                                $descricao  = $_POST['descricao'];
+                                $rua      = $_POST['rua'];
+                                $numero  = $_POST['numero'];
+                                $bairro  = $_POST['bairro'];
+                                $cidade = $_POST['cidade'];
+                                $Imagem = $_POST['Imagem'];
 
                                 $conn = mysqli_connect($servername, $username, $password, $database);
 
@@ -128,10 +129,10 @@
                                         $image_base64 = base64_encode(file_get_contents('IMG/'.$name) );
                                         $imagem = 'data:image/'.$imageFileType.';base64,'.$image_base64;
                                         // Inserindo 
-                                        $sql = "UPDATE cachorro SET Nome = '$nome', apelido = '$apelido', Ano_Nascimento = '$ano', Porte = '$porte' , Id_Raca = '$raca', Adotado = '$adotado', Apto = '$apto', Imagem = '$image_base64' WHERE Id = '$id'";
+                                        $sql = "UPDATE locais SET nome = '$nome', descricao = '$descricao', rua = '$rua', numero = '$numero' , bairro = '$bairro', cidade = '$cidade', Imagem = '$image_base64' WHERE id = '$id'";
                                     }
                                 } else {
-                                    $sql = "UPDATE cachorro SET Nome = '$nome', apelido = '$apelido', Ano_Nascimento = '$ano', Porte = '$porte' , Id_Raca = '$raca', Adotado = '$adotado', Apto = '$apto' WHERE Id = '$id'";
+                                    $sql = "UPDATE locais SET nome = '$nome', descricao = '$descricao', rua = '$rua', numero = '$numero' , bairro = '$bairro', cidade = '$cidade' WHERE id = '$id'";
                                 }
                                 
                                 // Faz o Upadate na Base de Dados
@@ -153,7 +154,7 @@
         <footer>
             <header class="linha-divisao"></header>
             <img class="img-rodape" src="IMG/logo_verticalpng.png">
-            <p class="copyright">&copy; Copyright Tripp Planner - 2023</p>
+            <p class="descricao">&copy; Tripp Planner - 2023</p>
         </footer>
     </body>
 </html>
