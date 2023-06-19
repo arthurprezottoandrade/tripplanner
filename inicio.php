@@ -61,16 +61,17 @@
                     mysqli_query($conn,'SET character_set_results=utf8');
 
                     // Faz Select na Base de Dados
-                    $sql = "SELECT c.id as Id, c.Nome as Nome, r.Nome as Raca, c.Ano_nascimento as Ano_nascimento, c.Porte as Porte, c.Imagem as Imagem FROM cachorro c, raca r where c.Id_Raca = r.Id and c.Apto = 'on' and (Adotado = '' or Adotado = 'off')";
+                    $sql = "SELECT l.id as Id, l.Nome as Nome, l.rua as Rua, l.numero as Numero, l.bairro as Bairro, l.cidade as Cidade, l.estado as Estado, l.foto as Imagem FROM locais l";
 
                     $result = mysqli_query($conn, $sql);
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = $result -> fetch_assoc()) {
-                            $id_cachorro = $row['Id'];
+                            $id_local = $row['Id'];
                             $nome      = $row['Nome'];
-                            $porte      = $row['Porte'];
-                            $Ano_Nascimento  = $row['Ano_nascimento'];
-                            $raca  = $row['Raca'];
+                            $cidade = $row['Cidade'];
+                            $rua      = $row['Rua'];
+                            $numero  = $row['Numero'];
+                            $bairro  = $row['Bairro'];
                             $foto = $row['Imagem'];
                 ?>
 
@@ -78,16 +79,18 @@
                         <div class="container">
                             <div class="sub-container" style="display:flex;">
                                 <div class="fields">
-                                    <h4><b><b>Id: </b><?php echo $id_cachorro ?></b></h4> 
+                                    <h4><b><b>Id: </b><?php echo $id_local ?></b></h4> 
                                     <h4><b><b>Nome: </b><?php echo $nome ?></b></h4> 
-                                    <h4><b><b>Porte: </b><?php echo $porte ?></b></h4> 
-                                    <h4><b><b>Ano Nascimento: </b><?php echo $Ano_Nascimento ?></b></h4> 
-                                    <h4><b><b>Raça: </b><?php echo $raca ?></b></h4>
+                                    <h4><b><b>Cidade: </b><?php echo $cidade ?></b></h4>
+                                    <h4><b><b>Rua: </b><?php echo $rua ?></b></h4> 
+                                    <h4><b><b>Numero: </b><?php echo $numero ?></b></h4> 
+                                    <h4><b><b>Bairro: </b><?php echo $bairro ?></b></h4>
+                                    
                                 </div>
                                 <img class="fotoConvertida" src="data:image/png;base64,<?php echo $foto ?>">
                             </div>
-                            <a href='reservaCachorro.php?id=<?php echo $id_cachorro ?>'>
-                                <button class="botao-reserva">Reservar</button>
+                            <a href='avaliaLocal.php?id=<?php echo $id_local ?>'>
+                                <button class="botao-reserva">Enviar</button>
                             </a>
                         </div>
                     </div>
