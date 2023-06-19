@@ -61,25 +61,7 @@
     <div>
         <img class="logo" src="IMG/logopng.png"/>
     </div>
-    <div class="botao-cabecalho">
-        <ul>
-            <li>
-                <a href="">
-                    <h3>MENU</h3>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <h3>SOBRE</h3>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <h3>CONTATO</h3>
-                </a>
-            </li>
-        </ul>
-    </div>
+
 </header>
 <!-- LINHA DE DIVISÃO -->
 <header class="linha-divisao"></header>
