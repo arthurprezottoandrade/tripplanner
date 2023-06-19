@@ -25,12 +25,11 @@
                 .menu {
                     position: fixed;
                     top: 50%;
-                    right: -20%; /* Inicialmente, o menu estará oculto */
-                    background-color: #f1f1f1;
+                    right: -15%; /* Inicialmente, o menu estará oculto */
                     width: 300px;
-                    padding: 1000px;
-                    border-radius: 20%;
-                    transition: right 0.3s;
+                    padding: 10px;
+                    border-radius: 185%;
+                    transition: right 0.7s;
                 }
                 
                 .menu a {
@@ -51,10 +50,10 @@
                 function toggleMenu() {
                     var menu = document.getElementById("menu");
                     
-                    if (menu.style.right === "-120px") {
+                    if (menu.style.right === "-13%") {
                         menu.style.right = "0";
                     } else {
-                        menu.style.right = "-120px";
+                        menu.style.right = "-13%";
                     }
                 }
             </script>

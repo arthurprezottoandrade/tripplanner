@@ -11,6 +11,52 @@
 <?php require 'conectaBD.php'; ?>
 <!-- CABEÇALHO -->
 <header class="cabecalho">
+<style>
+                /* Estilos para o botão e o menu */
+                .menu-btn {
+                    position: fixed;
+                    top: 2%;
+                    right: 0;
+                    transform: translate(-50%, -50%);
+                    background-color: #f1f1f1;
+                    cursor: pointer;
+                }
+                
+                .menu {
+                    position: fixed;
+                    top: 50%;
+                    right: -15%; /* Inicialmente, o menu estará oculto */
+                    width: 300px;
+                    padding: 10px;
+                    border-radius: 185%;
+                    transition: right 0.7s;
+                }
+                
+                .menu a {
+                    display: block;
+                    margin-bottom: 5%;
+                }
+
+            </style>
+
+            <div class="menu-btn" onclick="toggleMenu()">Menu</div>
+            <div class="menu" id="menu">
+                <a href="inicio.php">Inicio</a>
+                <a href="cadastroUsuario.php">Cadastrar Usuário</a>
+                <a href="mostrarLocal.php">Locais Cadastrados</a>
+            </div>
+            
+            <script>
+                function toggleMenu() {
+                    var menu = document.getElementById("menu");
+                    
+                    if (menu.style.right === "-13%") {
+                        menu.style.right = "0";
+                    } else {
+                        menu.style.right = "-13%";
+                    }
+                }
+            </script>
     <div>
         <img class="logo" src="IMG/logopng.png"/>
     </div>
