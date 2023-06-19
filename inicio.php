@@ -59,7 +59,7 @@
                 }
             </script>
             <div>
-                <img class="logo" src="IMG/logopng.png"/>
+                <img class="logo" src="IMG/logopng.jpg"/>
             </div>
             <div class="botao-cabecalho">
                 <ul>
