@@ -10,6 +10,57 @@
     <?php require 'conectaBD.php'; ?>
         <!-- CABEÇALHO -->
         <header class="cabecalho">
+
+                <style>
+                /* Estilos para o botão e o menu */
+                .menu-btn {
+                    position: fixed;
+                    top: 2%;
+                    right: 0;
+                    transform: translate(-50%, -50%);
+                    background-color: #f1f1f1;
+                    padding: 10px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+                
+                .menu {
+                    position: fixed;
+                    top: 50%;
+                    right: -20%; /* Inicialmente, o menu estará oculto */
+                    transform: translate(0, -50%);
+                    background-color: #f1f1f1;
+                    width: 500px;
+                    padding: 0px;
+                    border-radius: 4%;
+                    transition: right 0.3s;
+                }
+                
+                .menu a {
+                    display: block;
+                    margin-bottom: 5%;
+                }
+
+            </style>
+
+            <div class="menu-btn" onclick="toggleMenu()">Menu</div>
+            <div class="menu" id="menu">
+                <a href="inicio.php">Inicio</a>
+                <a href="cadastroUsuario.php">Cadastrar Usuário</a>
+                <a href="mostrarLocal.php">Locais Cadastrados</a>
+            </div>
+            
+            <script>
+                function toggleMenu() {
+                    var menu = document.getElementById("menu");
+                    
+                    if (menu.style.right === "-120px") {
+                        menu.style.right = "0";
+                    } else {
+                        menu.style.right = "-120px";
+                    }
+                }
+            </script>
             <div>
                 <img class="logo" src="IMG/logopng.png"/>
             </div>
@@ -43,7 +94,7 @@
                 <h2 class="w3-xxlarge"style="text-align: center">Sua viagem está aqui</h2>
 
                 <p class="w3-large">
-                <div class="w3-code">  
+                <div class="w3-code">
                 <!-- ACESSO AO BANCO DE DADOS-->
                 <?php
 

@@ -8,6 +8,7 @@ CREATE TABLE `locais` (
   `id` int(11) NOT NULL,
   `tipopref` int(11) NOT NULL,
   `nome` varchar(100) DEFAULT NULL,
+  `descricao` varchar(100) NOT NULL,
   `rua` varchar(100) DEFAULT NULL,
   `numero` int(11) DEFAULT NULL,
   `bairro` varchar(100) DEFAULT NULL,
@@ -19,8 +20,7 @@ CREATE TABLE `locais` (
 
 CREATE TABLE `preferencia` (
   `id` int(11) NOT NULL,
-  `idusuario` int(11) NOT NULL,
-  `idpref` int(11) NOT NULL
+  `nome` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `usuario` (
