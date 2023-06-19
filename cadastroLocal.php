@@ -91,6 +91,9 @@
             <label for="nome">Nome
                 <input type="text" name="nome" required>
             </label>
+            <label for="rua">Descrição
+                <textarea name="descricao" required></textarea>
+            </label>
             <label for="rua">Rua
                 <input type="text" name="rua" required>
             </label>
@@ -103,30 +106,72 @@
             <label for="cidade">Cidade
                 <input type="text" name="cidade" required>
             </label>
-            <p>
-                        <label class="w3-text-deep-brown"><b>Imagem:</b></label>
-                        <label class="w3-btn w3-theme"><b>Selecione uma imagem</b>
-                        <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
-                        <input type="file" style="display:none;background-color:brown;" id="Imagem" name="Imagem" accept="imagem/*" onchange="previewImagem();"></label>
-                    </p>
-                    <img id="imgCamp" style="width:20vw;height:auto;">
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            
+            <label for="name"> Preferencia
+                        <select name="preferencia" required>
+                            <option class="indicacao-option" value="">Selecione a preferencia desejada:</option>
+                    <?php		
+                        $id=$_GET['id'];
 
-                    <script>
-                        function previewImagem(){
-                            var imagem = document.querySelector('input[name=Imagem]').files[0];
-                            var preview = document.getElementById('imgCamp');
+                        // Cria conexão
+                        $conn = mysqli_connect($servername, $username, $password, $database);
 
-                            var reader = new FileReader();
-                            reader.onload = function(e){
-                                preview.src = e.target.result;
-                            }
-                            if(imagem){
-                                reader.readAsDataURL(imagem);
-                            }else{
-                                preview.src = "";
+                        // Verifica conexão
+                        if (!$conn) {
+                            die("Connection failed: " . mysqli_connect_error());
+                        }
+                        // Configura para trabalhar com caracteres acentuados do português	 
+                        mysqli_query($conn,"SET NAMES 'utf8'");
+                        mysqli_query($conn,'SET character_set_connection=utf8');
+                        mysqli_query($conn,'SET character_set_client=utf8');
+                        mysqli_query($conn,'SET character_set_results=utf8');
+
+                        // Faz Select na Base de Dados
+
+                        $sql = "SELECT id, nome from preferencia";
+
+                        if ($result = mysqli_query($conn, $sql)) {
+                            if (mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $id = $row['id'];
+                                    $nome = $row['nome'];
+                    ?>
+
+                            <option value="<?php echo $id ?>"><?php echo $nome ?></option>
+                        
+                    <?php
+                                }
+                            } else {
+                                //ENCERRA CONEXÃO COM O BANCO DE DADOS
+                                mysqli_close($conn);
                             }
                         }
+                    ?>
+                    </select>
+                    </label>
+            <p>
+                <label class="w3-text-deep-brown"><b>Imagem:</b></label>
+                <label class="w3-btn w3-theme"><b>Selecione uma imagem</b>
+                <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+                <input type="file" style="display:none;background-color:brown;" id="Imagem" name="Imagem" accept="imagem/*" onchange="previewImagem();"></label>
+            </p>
+            <img id="imgCamp" style="width:20vw;height:auto;">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script>
+                function previewImagem(){
+                    var imagem = document.querySelector('input[name=Imagem]').files[0];
+                    var preview = document.getElementById('imgCamp');
+
+                    var reader = new FileReader();
+                    reader.onload = function(e){
+                        preview.src = e.target.result;
+                    }
+                    if(imagem){
+                        reader.readAsDataURL(imagem);
+                    }else{
+                        preview.src = "";
+                    }
+                }
             </script>
             <label for="submit"> 
                 <button class="botao-cadastro" type="submit"><b>Cadastrar</b></button>
