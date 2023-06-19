@@ -1,13 +1,13 @@
 <html>
     <head>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="CSS/cadastro.css">
-    <title>Cadastro de Local - Tripp Planner</title>
+    <title>Cadastro de Usuario - Tripp Planner</title>
     <link rel="icon" type="image/jpg" href="IMG/logo_icone.jpg"/>
+
     </head>
-    <body>
-        <header class="cabecalho">
-        <style>
+	<header class="cabecalho">
+    <style>
                 /* Estilos para o botão e o menu */
                 .menu-btn {
                     position: fixed;
@@ -54,35 +54,30 @@
                     }
                 }
             </script>
-            <div>
-                <img class="logo" src="IMG/logopng.png"/>
-            </div>
-            <div class="botao-cabecalho">
-                <ul>
-                    <li>
-                        <a href="">
-                            <h3>MENU</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <h3>SOBRE</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <h3>CONTATO</h3>
-                        </a>
-                    </li>
-                    <li>
-                    <a href="mostrarCachorro.php">
-                        <h3>MOSTRAR LOCAIS</h3>
+        <div>
+            <img class="logo" src="IMG/logopng.png"/>
+        </div>
+        <div class="botao-cabecalho">
+            <ul>
+                <li>
+                    <a href="inicio.php">
+                        <h3>MENU</h3>
                     </a>
                 </li>
-                </ul>
-            </div>
-        </header>
-        <header class="linha-divisao"></header>
+                <li>
+                    <a href="">
+                        <h3>SOBRE</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <h3>CONTATO</h3>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+	<header class="linha-divisao"></header>
 
         <!-- Retângulo Principal: deslocado em 270 pixels para direita quando é visível -->
         <div class="w3-main w3-container">
@@ -90,17 +85,17 @@
             <!-- Borda do Retângulo Principal -->
             <div class="w3-panel w3-padding-large w3-card-4 w3-light-brown">
     
-                <h1>Registro de Cachorros</h1>
+                <h1>Registro de Locais</h1>
                 <?php require 'conectaBD.php'; ?>
 
                 <?php
                     $nome    = $_POST['nome'];
-                    $apelido = $_POST['apelido'];
-                    $ano = $_POST['ano'];
-                    $porte = $_POST['porte'];
-                    $raca = $_POST['raca'];
-                    $id_instituicao = $_POST['id_instituicao'];
-                    $apto = $_POST['apto'];
+                    $rua = $_POST['rua'];
+                    $numero = $_POST['numero'];
+                    $bairro = $_POST['bairro'];
+                    $cidade = $_POST['cidade'];
+                    $preferencia = $_POST['preferencia'];
+                    $descricao = $_POST['descricao'];
 
                     $name = $_FILES['Imagem']['name'];
                     $target_dir = "IMG/";
@@ -111,14 +106,14 @@
                     if( in_array($imageFileType,$extensions_arr) ){
 
                     // Upload do arquivo
-                    if(move_uploaded_file($_FILES['Imagem']['tmp_name'],$target_dir.$name)){
+                    if(move_uploaded_file($_FILES['foto']['tmp_name'],$target_dir.$name)){
                         // Convertendo para base 64
                         $image_base64 = base64_encode(file_get_contents('IMG/'.$name) );
                         // Inserindo 
-                        $sql = "INSERT INTO cachorro(Nome, Ano_Nascimento, Porte, Id_Raca, Id_Instituicao, Adotado, Apto, apelido, Imagem) VALUES ('$nome','$ano', '$porte','$raca','$id_instituicao', '', '$apto', '$apelido', '$image_base64')";
+                        $sql = "INSERT INTO locais(nome, rua, numero, bairro, cidade, foto,tipopref,descricao) VALUES ('$nome','$rua', '$numero','$bairro','$cidade', '$image_base64','$preferencia','$descricao')";
                         } 
                     } else {
-                        $sql = "INSERT INTO cachorro(Nome, Ano_Nascimento, Porte, Id_Raca, Id_Instituicao, Adotado, apelido, Apto) VALUES ('$nome','$ano', '$porte','$raca','$id_instituicao', '','$apelido', '$apto')";
+                        $sql = "INSERT INTO locais(nome, rua, numero, bairro, cidade, tipopref, descricao) VALUES ('$nome','$rua', '$numero','$bairro','$cidade','$preferencia','$descricao')";
                     }
 
                     // Cria conexão
@@ -150,4 +145,3 @@
         </div>
 	</body>
 </html>
-
