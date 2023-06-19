@@ -39,6 +39,7 @@
                 <a href="inicio.php">Inicio</a>
                 <a href="cadastroUsuario.php">Cadastrar Usuário</a>
                 <a href="mostrarLocal.php">Locais Cadastrados</a>
+                <a href="cadastroLocal.php">Cadastrar Local</a>
             </div>
             
             <script>
