@@ -40,7 +40,7 @@
         <div class="w3-main w3-container">
 
             <div class="w3-panel w3-padding-large w3-card-4 w3-light-dark">
-                <h2 class="w3-xxlarge"style="text-align: center">Seu novo melhor amigo está aqui</h2>
+                <h2 class="w3-xxlarge"style="text-align: center">Sua viagem está aqui</h2>
 
                 <p class="w3-large">
                 <div class="w3-code">  
@@ -106,7 +106,7 @@
         <footer>
             <header class="linha-divisao"></header>
             <img class="img-rodape" src="IMG/logo_verticalpng.png">
-            <p class="copyright">&copy; Copyright Help Friend - 2022</p>
+            <p class="copyright">&copy; Copyright Tripp Planner - 2023</p>
         </footer>
     </body>
 </html>
