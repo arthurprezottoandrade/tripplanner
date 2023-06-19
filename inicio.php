@@ -12,7 +12,6 @@
         <header class="cabecalho">
 
                 <style>
-                /* Estilos para o botão e o menu */
                 .menu-btn {
                     position: fixed;
                     top: 2%;
