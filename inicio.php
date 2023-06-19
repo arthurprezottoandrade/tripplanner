@@ -19,8 +19,6 @@
                     right: 0;
                     transform: translate(-50%, -50%);
                     background-color: #f1f1f1;
-                    padding: 10px;
-                    border-radius: 4px;
                     cursor: pointer;
                 }
                 
@@ -28,11 +26,10 @@
                     position: fixed;
                     top: 50%;
                     right: -20%; /* Inicialmente, o menu estará oculto */
-                    transform: translate(0, -50%);
                     background-color: #f1f1f1;
-                    width: 500px;
-                    padding: 0px;
-                    border-radius: 4%;
+                    width: 300px;
+                    padding: 1000px;
+                    border-radius: 20%;
                     transition: right 0.3s;
                 }
                 
