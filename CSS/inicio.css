@@ -2,22 +2,46 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
+    background-color: rgb(244, 242, 236);
 }
 
 /* estilo de cabecalho */
 .cabecalho {
-    width: 100%;
-    background-color: white;
-    height: 160px;
+    background-color: rgb(39, 37, 28);
+    height: 130px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
 }
 
+.menu-btn {
+    position: fixed;
+    top: 2%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.menu {
+    position: fixed;
+    top: 50%;
+    right: -13%; /* Inicialmente, o menu estará oculto */
+    width: 300px;
+    padding: 10px;
+    border-radius: 50%;
+    transition: right 0.7s;
+}
+
+.menu a {
+    display: block;
+    margin-bottom: 5%;
+}
+
 /* imagem de logo */
 .logo {
-    width: 425px;
+    width: 385px;
 }
 
 /* posição de texto MENU SOBRE CONTATO */
@@ -40,30 +64,34 @@ body {
 
 /* Mudar cor ao passar cursor */
 .botao-cabecalho ul li a {
-    color: black;
+    color: rgb(130, 122, 96);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .botao-cabecalho ul li a:hover {
-    color: rgb(197, 146, 83);
+    color: white;
 }
 
 /* linha horizontal de divisao */
 .linha-divisao {
     width: 100%;
-    background-color: #c59253;
+    background-color: rgb(36, 34, 26);
     height: 10px;
 }
 
 .w3-code {
+    /*background-color: white;*/
     margin-left: 6.5vw;
-    border-left: 10px solid rgb(197, 146, 83);
+    margin-bottom: 3.5vw;
+    border-left: 10px solid rgb(36, 34, 26);
+    border-radius: 7px;
     display: flex;
     flex-wrap: wrap;
 }
 
 .card {
+    background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.15s;
     margin-left: 0.1vw;
@@ -90,43 +118,43 @@ body {
     margin: 3% 9%;
 }
 
-.botao-reserva {
+.botao-visitado {
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
     border-radius: 9px;
     font-family: Arial;
-    color: #ffffff;
-    font-size: 13px;
-    background-color: #c59253 !important;
+    color: white;
+    font-size: 15px;
+    background-color: rgb(36, 34, 26) !important;
     padding: 10px 20px;
     text-decoration: none;
     border: none;
+    transition: color 0.3s;
 }
 
-.botao-reserva:hover {
+.botao-visitado:hover {
     cursor: pointer;
-    background: #99652b;
-    text-decoration: none;
+    background-color: rgb(26, 24, 19) !important;
 }
 
 /* rodapé */
 footer {
-    background-color: white;
+    background-color: rgb(39, 37, 28);
     margin-top: 50px;
     text-align: center;
-    padding: 20px;
+    padding-bottom: 30px;
 }
 
 /* imagem rodapé */
 .img-rodape {
     display: block;
     height: 200px;
-    margin: 0 auto;
+    margin: auto;
 }
 
 /* texto rodapé */
-.copy {
-    font-size: 12px;
+.copyright {
+    font-size: 16px;
     color: #999;
     margin: 0;
     padding: 0;
