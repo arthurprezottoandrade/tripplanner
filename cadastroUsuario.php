@@ -11,6 +11,53 @@
     <?php require 'conectaBD.php'; ?>
         <!-- CABEÇALHO -->
         <header class="cabecalho">
+        <style>
+                /* Estilos para o botão e o menu */
+                .menu-btn {
+                    position: fixed;
+                    top: 2%;
+                    right: 0;
+                    transform: translate(-50%, -50%);
+                    background-color: #f1f1f1;
+                    cursor: pointer;
+                }
+                
+                .menu {
+                    position: fixed;
+                    top: 50%;
+                    right: -15%; /* Inicialmente, o menu estará oculto */
+                    width: 300px;
+                    padding: 10px;
+                    border-radius: 185%;
+                    transition: right 0.7s;
+                }
+                
+                .menu a {
+                    display: block;
+                    margin-bottom: 5%;
+                }
+
+            </style>
+
+            <div class="menu-btn" onclick="toggleMenu()">Menu</div>
+            <div class="menu" id="menu">
+                <a href="inicio.php">Inicio</a>
+                <a href="cadastroUsuario.php">Cadastrar Usuário</a>
+                <a href="mostrarLocal.php">Locais Cadastrados</a>
+                <a href="cadastroLocal.php">Cadastrar Local</a>
+            </div>
+            
+            <script>
+                function toggleMenu() {
+                    var menu = document.getElementById("menu");
+                    
+                    if (menu.style.right === "-13%") {
+                        menu.style.right = "0";
+                    } else {
+                        menu.style.right = "-13%";
+                    }
+                }
+            </script>
             <main>
                 <div>
                     <div>
@@ -49,40 +96,15 @@
                             <label for="name"> Nome 
                                 <input type="text" name="nome" required>
                             </label>
-                            <label for="password"> Senha 
-                                <input type="password" name="senha"required>
-                            </label>
-
-                            <label for="cpf"> CPF
-                                <input type="text" name="cpf"required>
+                            <label for="sobrenome"> Sobrenome 
+                                <input type="text" name="sobrenome" required>
                             </label>
 
                             <label for="email"> E-mail
                                 <input type="email" name="email"required>
                             </label>
-
-                            <label for="logradouro"> Logradouro 
-                                <input type="text" name="logradouro"required>
-                            </label>               
-
-                            <label for="numero"> Numero 
-                                <input type="text" name="numero"required>
-                            </label>
-
-                            <label for="complemento"> Complemento
-                                <input type="text" name="complemento"required>
-                            </label>
-
-                            <label for="bairro"> Bairro
-                                <input type="text" name="bairro"required>
-                            </label>
-
-                            <label for="cidade"> Cidade
-                                <input type="text" name="cidade"required>
-                            </label>
-
-                            <label for="estado"> Estado 
-                                <input type="text" name="estado"required>
+                            <label for="senha"> Senha 
+                                <input type="password" name="senha"required>
                             </label>
 
                             <label for="submit"> 

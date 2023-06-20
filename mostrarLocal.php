@@ -7,6 +7,54 @@
     </head>
     <!-- CABEÇALHO -->
     <header class="cabecalho">
+    <style>
+                /* Estilos para o botão e o menu */
+                .menu-btn {
+                    position: fixed;
+                    top: 2%;
+                    right: 0;
+                    transform: translate(-50%, -50%);
+                    background-color: #f1f1f1;
+                    cursor: pointer;
+                }
+                
+                .menu {
+                    position: fixed;
+                    top: 50%;
+                    right: -15%; /* Inicialmente, o menu estará oculto */
+                    width: 300px;
+                    padding: 10px;
+                    border-radius: 185%;
+                    transition: right 0.7s;
+                }
+                
+                .menu a {
+                    display: block;
+                    margin-bottom: 5%;
+                }
+
+            </style>
+
+            <div class="menu-btn" onclick="toggleMenu()">Menu</div>
+            <div class="menu" id="menu">
+                <a href="inicio.php">Inicio</a>
+                <a href="cadastroUsuario.php">Cadastrar Usuário</a>
+                <a href="mostrarLocal.php">Locais Cadastrados</a>
+                <a href="cadastroLocal.php">Cadastrar Local</a>
+            </div>
+            
+            <script>
+                function toggleMenu() {
+                    var menu = document.getElementById("menu");
+                    
+                    if (menu.style.right === "-13%") {
+                        menu.style.right = "0";
+                    } else {
+                        menu.style.right = "-13%";
+                    }
+                }
+            </script>
+
         <div>
             <img class="logo" src="IMG/logopng.png"/>
         </div>
@@ -68,40 +116,40 @@
                     mysqli_query($conn,'SET character_set_client=utf8');
                     mysqli_query($conn,'SET character_set_results=utf8');
 
-                        $sql = "SELECT c.id, c.Nome, r.Nome as Raca, c.Ano_nascimento, c.Porte FROM cachorro c, raca r where c.Id_Raca = r.Id";
+                        $sql = "SELECT l.id, l.Nome, l.cidade, l.rua, l.numero, l.bairro, l.estado FROM locais l";
                         echo "<div class='w3-responsive w3-card-4'>";
                         if ($result = mysqli_query($conn, $sql)) {
                             echo "<table class='w3-table-all'>";
                             echo "	<tr>";
                             echo "	  <th>Id</th>";
                             echo "	  <th>Nome</th>";
-                            echo "	  <th>Raça</th>";
-                            echo "	  <th>Ano Nascimento</th>";
-                            echo "	  <th>Porte</th>";
-                            echo "	  <th> </th>";
+                            echo "	  <th>Cidade</th>";
+                            echo "	  <th>Rua</th>";
+                            echo "	  <th>Numero</th>";
+                            echo "	  <th>Bairro</th>";
+                            echo "	  <th>Estado</th>";
                             echo "	  <th> </th>";
                             echo "	</tr>";
                             if (mysqli_num_rows($result) > 0) {
                                 // Apresenta cada linha da tabela
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                    $dataN = explode('-', $row["Ano_nascimento"]);
-                                    $ano = $dataN[0];
-                                    $mes = $dataN[1];
-                                    $dia = $dataN[2];
                                     $cod = $row["id"];
-                                    $nova_data = $ano;
                                     echo "<tr>";
                                     echo "<td>";
                                     echo $cod;
                                     echo "</td><td>";
                                     echo $row["Nome"];
                                     echo "</td><td>";
-                                    echo $row["Raca"];
+                                    echo $row["Cidade"];
                                     echo "</td><td>";
-                                    echo $nova_data;
+                                    echo $row["Rua"];
                                     echo "</td><td>";
-                                    echo $row["Porte"];
+                                    echo $row["Numero"];
                                     echo "</td><td>";
+                                    echo $row["Bairro"];
+                                    echo "</td><td>";
+                                    echo $row["Estado"];
+                                    echo "</td>";
                     ?>
                                 <!-- Atualizar e Excluir cachorro -->
                                 <a href='atualizaLocal.php?id=<?php echo $cod; ?>'><img src='IMG/editar.png' title='Editar Local' width='32'></a>
