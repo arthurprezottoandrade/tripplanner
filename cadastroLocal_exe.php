@@ -2,38 +2,11 @@
 <head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="CSS/cadastro.css">
-    <title>Cadastro de Usuario - Tripp Planner</title>
-    <link rel="icon" type="image/jpg" href="IMG/logo_icone.jpg"/>
+    <title>Cadastro de Local - TripPlanner</title>
+    <link rel="icon" type="image/jpg" href="IMG/logo_transparente.png"/>
 </head>
 <body>
     <header class="cabecalho">
-        <style>
-            /* Estilos para o botão e o menu */
-            .menu-btn {
-                position: fixed;
-                top: 2%;
-                right: 0;
-                transform: translate(-50%, -50%);
-                background-color: #f1f1f1;
-                cursor: pointer;
-            }
-            
-            .menu {
-                position: fixed;
-                top: 50%;
-                right: -15%; /* Inicialmente, o menu estará oculto */
-                width: 300px;
-                padding: 10px;
-                border-radius: 185%;
-                transition: right 0.7s;
-            }
-            
-            .menu a {
-                display: block;
-                margin-bottom: 5%;
-            }
-        </style>
-
         <div class="menu-btn" onclick="toggleMenu()">Menu</div>
         <div class="menu" id="menu">
             <a href="inicio.php">Inicio</a>
@@ -55,7 +28,7 @@
         </script>
 
         <div>
-            <img class="logo" src="IMG/logopng.png"/>
+            <img class="logo" src="IMG/logo_horizontal.png"/>
         </div>
 
         <div class="botao-cabecalho">
@@ -82,7 +55,7 @@
     <header class="linha-divisao"></header>
 
     <!-- Retângulo Principal: deslocado em 270 pixels para direita quando é visível -->
-    <div class="w3-main w3-container">
+    <div class="w3-main w3-container"  style="margin-left:10px;margin-top:90px;">
 
         <!-- Borda do Retângulo Principal -->
         <div class="w3-panel w3-padding-large w3-card-4 w3-light-brown">
@@ -143,5 +116,10 @@
             ?>
         </div>
     </div>
+    <footer>
+        <header class="linha-divisao"></header>
+        <img class="img-rodape" src="IMG/logo_principal.png">
+        <p class="copyright">&copy; Copyright TripPlanner - 2023</p>
+    </footer>
 </body>
 </html>
