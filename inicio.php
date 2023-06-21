@@ -1,10 +1,12 @@
+<!DOCTYPE html>
+<html>
 <head>
     <link rel="stylesheet" type="text/css" href="CSS/inicio.css">
-    <title>Cadastro Usuário - TripPlanner</title>
+    <title>TripPlanner</title>
     <link rel="icon" type="image/jpg" href="IMG/logo_transparente.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 
-        <style>
+    <style>
         .rating {
             unicode-bidi: bidi-override;
             direction: rtl;
@@ -75,6 +77,9 @@
         </script>
 
         <img class="logo" src="IMG/logo_horizontal.png"/>
+        <div class="center">
+            <button class="brown-button" onclick="openModal()">Filtros</button>
+        </div>
 
         <div class="botao-cabecalho">
             <ul>
@@ -84,7 +89,8 @@
             </ul>
         </div>
     </header>
-    
+
+
     <!-- LINHA DE DIVISÃO -->
     <header class="linha-divisao"></header>
 
@@ -153,7 +159,7 @@
             .form-grid {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 0px; /* Adiciona um espaçamento de 20px entre as divs */
+                gap: 20px; /* Adiciona um espaçamento de 20px entre as divs */
             }
                         
             .close {
@@ -217,38 +223,38 @@
                     <div class="cidade-filters">
                     <h3>Cidades</h3>
                     <label for="cidade1" class="checkbox-label">
-                        <input type="checkbox" name="cidade1" value="a"> Opção 1
+                        <input type="checkbox" name="cidade1" value="a"> Rio de Janeiro
                     </label>
                     <label for="cidade2" class="checkbox-label">
-                        <input type="checkbox" name="cidade2" value="b"> Opção 2
+                        <input type="checkbox" name="cidade2" value="b"> Porto de Galinhas
                     </label>
                     <label for="cidade3" class="checkbox-label">
-                        <input type="checkbox" name="cidade3" value="c"> Opção 3
+                        <input type="checkbox" name="cidade3" value="c"> Curitiba
                     </label>
                     <label for="cidade4" class="checkbox-label">
-                        <input type="checkbox" name="cidade4" value="d"> Opção 4
+                        <input type="checkbox" name="cidade4" value="d"> Maceió
                     </label>
                     <label for="cidade5" class="checkbox-label">
-                        <input type="checkbox" name="cidade5" value="e"> Opção 5
+                        <input type="checkbox" name="cidade5" value="e"> São Paulo
                     </label>
                     </div>
                     <div class="separator"></div>
                     <div class="local-filters">
                     <h3>Locais</h3>
                     <label for="local1" class="checkbox-label">
-                        <input type="checkbox" name="local1" value="1"> Opção 6
+                        <input type="checkbox" name="local1" value="1"> Ponto turistico
                     </label>
                     <label for="local2" class="checkbox-label">
-                        <input type="checkbox" name="local2" value="2"> Opção 7
+                        <input type="checkbox" name="local2" value="2"> Estadio
                     </label>
                     <label for="local3" class="checkbox-label">
-                        <input type="checkbox" name="local3" value="3"> Opção 8
+                        <input type="checkbox" name="local3" value="3"> Praia
                     </label>
                     <label for="local4" class="checkbox-label">
-                        <input type="checkbox" name="local4" value="4"> Opção 9
+                        <input type="checkbox" name="local4" value="4"> Restaurante
                     </label>
                     <label for="local5" class="checkbox-label">
-                        <input type="checkbox" name="local5" value="5"> Opção 10
+                        <input type="checkbox" name="local5" value="5"> Parque
                     </label>
                     </div>
                 </div>
