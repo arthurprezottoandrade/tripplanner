@@ -1,87 +1,90 @@
-<!DOCTYPE html>
-
-<html>
+<html>    
     <head>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" type="text/css" href="CSS/atualizar.css">
-        <title>Atualização de Usuário - TripPlanner</title>
-        <link rel="icon" type="image/jpg" href="IMG/logo_transparente.png"/>
-    </head>
-    <body>
+    <link rel="stylesheet" type="text/css" href="CSS/inicio.css">
+    <title>Atualizar Local - TripPlanner</title>
+    <link rel="icon" type="image/jpg" href="IMG/logo_transparente.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+        <style>
+        .rating {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            text-align: left;
+        }
+        .rating > span {
+            display: inline-block;
+            position: relative;
+            width: 1.1em;
+        }
+        .rating > span:hover:before,
+        .rating > span:hover ~ span:before {
+            content: "\2605";
+            position: absolute;
+            color: gold;
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 10%;
+            height: 100%;
+            background-color: #5C4033;
+            z-index: 9999;
+            transition: left 0.3s;
+            border-radius: 0; /* Remova esta propriedade */
+        }
+
+        .menu.show {
+            left: 0;
+        }
+
+        .menu a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            background-color: #3D291F;
+        }
+    </style>
+</head>
+<body>
     <!-- CONEXÃO COM O BANCO DE DADOS -->
     <?php require 'conectaBD.php'; ?>
-        <!-- CABEÇALHO -->
-        <header class="cabecalho">
-        <style>
-                /* Estilos para o botão e o menu */
-                .menu-btn {
-                    position: fixed;
-                    top: 2%;
-                    right: 0;
-                    transform: translate(-50%, -50%);
-                    background-color: #f1f1f1;
-                    cursor: pointer;
-                }
-                
-                .menu {
-                    position: fixed;
-                    top: 50%;
-                    right: -15%; /* Inicialmente, o menu estará oculto */
-                    width: 300px;
-                    padding: 10px;
-                    border-radius: 185%;
-                    transition: right 0.7s;
-                }
-                
-                .menu a {
-                    display: block;
-                    margin-bottom: 5%;
-                }
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+        <div class="menu" id="menu">
+            <a href="inicio.php">Inicio</a>
+            <a href="cadastroUsuario.php">Cadastrar Usuário</a>
+            <a href="mostrarLocal.php">Locais Cadastrados</a>
+            <a href="cadastroLocal.php">Cadastrar Local</a>
+        </div>
 
-            </style>
+        <script>
+            function toggleMenu() {
+                var menu = document.getElementById("menu");
 
-            <div class="menu-btn" onclick="toggleMenu()">Menu</div>
-            <div class="menu" id="menu">
-                <a href="inicio.php">Inicio</a>
-                <a href="cadastroUsuario.php">Cadastrar Usuário</a>
-                <a href="mostrarLocal.php">Locais Cadastrados</a>
-                <a href="cadastroLocal.php">Cadastrar Local</a>
-            </div>
-            
-            <script>
-                function toggleMenu() {
-                    var menu = document.getElementById("menu");
-                    
-                    if (menu.style.right === "-13%") {
-                        menu.style.right = "0";
-                    } else {
-                        menu.style.right = "-13%";
-                    }
-                }
-            </script>
-            <div>
-                <img class="logo" src="IMG/logo_horizontal.png"/>
-            </div>
-            <div class="botao-cabecalho">
-                <ul>
-                    <li>
-                        <a href="">
-                            <h3>MENU</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <h3>SOBRE</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <h3>CONTATO</h3>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </header>
+                menu.classList.toggle("show");
+            }
+
+            function openModal() {
+                // Implemente aqui a lógica para abrir a janela modal
+            }
+        </script>
+
+        <img class="logo" src="IMG/logo_horizontal.png"/>
+
+        <div class="botao-cabecalho">
+            <ul>
+                <li><a href="#" onclick="toggleMenu()"><h3>MENU</h3></a></li>
+                <li><a href=""><h3>SOBRE</h3></a></li>
+                <li><a href=""><h3>CONTATO</h3></a></li>
+            </ul>
+        </div>
+    </header>
         <!-- LINHA DE DIVISÃO -->
         <header class="linha-divisao"></header>
         <div>

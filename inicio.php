@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html>
 <head>
     <link rel="stylesheet" type="text/css" href="CSS/inicio.css">
-    <title>TripPlanner</title>
+    <title>Cadastro Usuário - TripPlanner</title>
     <link rel="icon" type="image/jpg" href="IMG/logo_transparente.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 
-    <style>
+        <style>
         .rating {
             unicode-bidi: bidi-override;
             direction: rtl;
@@ -77,9 +75,6 @@
         </script>
 
         <img class="logo" src="IMG/logo_horizontal.png"/>
-        <div class="center">
-            <button class="brown-button" onclick="openModal()">Filtros</button>
-        </div>
 
         <div class="botao-cabecalho">
             <ul>
@@ -89,8 +84,7 @@
             </ul>
         </div>
     </header>
-
-
+    
     <!-- LINHA DE DIVISÃO -->
     <header class="linha-divisao"></header>
 
@@ -159,7 +153,7 @@
             .form-grid {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                gap: 20px; /* Adiciona um espaçamento de 20px entre as divs */
+                gap: 0px; /* Adiciona um espaçamento de 20px entre as divs */
             }
                         
             .close {
