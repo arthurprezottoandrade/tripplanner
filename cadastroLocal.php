@@ -141,11 +141,11 @@
         </form>
     </div>
     <!-- RODAPÉ -->
-<footer>
-    <header class="linha-divisao"></header>
-    <img class="img-rodape" src="IMG/logo_principal.png">
-    <p class="copyright">&copy; Copyright Tripp Planner - 2023</p>
-</footer>
+    <footer>
+        <header class="linha-divisao"></header>
+        <img class="img-rodape" src="IMG/logo_principal.png">
+        <p class="copyright">&copy; Copyright TripPlanner - 2023</p>
+    </footer>
 <?php 
     //FIM DA DIV FORM
     echo "</div>";
