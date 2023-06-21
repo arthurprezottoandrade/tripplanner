@@ -49,6 +49,94 @@
     <!-- Conteúdo Principal: deslocado para direita em 270 pixels quando a sidebar é visível -->
     <div class="w3-main w3-container">
         <div class="w3-panel w3-padding-large w3-card-4 w3-light-dark">
+
+
+
+
+            <title>Filtros</title>
+            <style>
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0,0,0,0.4);
+            }
+
+            .modal-content {
+                background-color: #fefefe;
+                margin: 15% auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+            }
+
+            .close {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            .center {
+                text-align: center;
+            }
+
+            .brown-button {
+                background-color: brown;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            </style>
+            <div class="center">
+                <button class="brown-button" onclick="openModal()">Filtros</button>
+            </div>
+
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <form method="POST">
+                        <h2>Selecione as opções:</h2>
+                        <label for="opcao1">
+                            <input type="checkbox" name="opcao1" value="1"> Opção 1
+                        </label>
+                        <br>
+                        <label for="opcao2">
+                            <input type="checkbox" name="opcao2" value="2"> Opção 2
+                        </label>
+                        <br>
+                        <label for="opcao3">
+                            <input type="checkbox" name="opcao3" value="3"> Opção 3
+                        </label>
+                        <br><br>
+                        <input type="submit" value="Enviar">
+                    </form>
+                </div>
+            </div>
+
+            <script>
+                function openModal() {
+                    document.getElementById("myModal").style.display = "block";
+                }
+
+                function closeModal() {
+                    document.getElementById("myModal").style.display = "none";
+                }
+            </script>
+        </body>
+        </html>
+
+
+
             <h2 class="w3-xxlarge" style="text-align: center">Ajudamos você a encontrar sua próxima viagem!</h2>
 
             <div class="w3-code">
@@ -69,8 +157,29 @@
                 mysqli_query($conn, 'SET character_set_results=utf8');
 
                 // Faz Select na Base de Dados
+
+                $opcao1 = '';
+                $opcao2 = '';
+                $opcao3 = '';
+
                 $sql = "SELECT l.id as Id, l.Nome as Nome, l.rua as Rua, l.numero as Numero, l.bairro as Bairro, l.cidade as Cidade, l.estado as Estado, l.foto as Imagem FROM locais l";
 
+    
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    // Armazenar os números selecionados
+                    $opcao1 = $_POST[1] ?? '';
+                    $opcao2 = $_POST[2] ?? '';
+                    $opcao3 = $_POST[3] ?? '';
+    
+                    // Fazer o que desejar com as variáveis $opcao1, $opcao2, $opcao3
+                    // Neste exemplo, vamos apenas armazená-las em uma variável
+                    $opcoesSelecionadas = array($opcao1, $opcao2, $opcao3);
+                    
+                    $sql = "SELECT l.id as Id, l.Nome as Nome, l.rua as Rua, l.numero as Numero, l.bairro as Bairro, l.cidade as Cidade, l.estado as Estado, l.foto as Imagem FROM locais l where tipopref in ($opcoesSelecionadas)";
+
+                    
+                }
+                
                 $result = mysqli_query($conn, $sql);
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = $result->fetch_assoc()) {
