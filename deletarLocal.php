@@ -96,7 +96,7 @@
 						$id=$_GET['id'];
 						
 						// Faz Select na Base de Dados
-						$sql = "SELECT c.Id, c.Nome, r.Nome as Raca, c.Ano_nascimento, c.Porte FROM cachorro c, raca r where c.Id_Raca = r.Id and c.Id = $id";
+						$sql = "SELECT l.id,l.nome,l.descricao,l.rua,l.numero,l.bairro,l.cidade,l.estado FROM locais l where l.id = $id";
 						echo "<div class='w3-responsive w3-card-4'>"; //Inicio form
 						if ($result = mysqli_query($conn, $sql)) {
 								if (mysqli_num_rows($result) > 0) {
@@ -106,21 +106,21 @@
 						?>
 										<!-- Título de Cachorro específico em 20px para a direita -->
 										<div class="w3-theme">
-											<h2>ID do Cachorro: <?php echo $row['Id']; ?></h2>
+											<h2>ID do Local: <?php echo $row['Id']; ?></h2>
 										</div>
 										<form class="w3-container" action="deletarLocal_exe.php" method="post" onsubmit="return check(this.form)">
-											<input type="hidden" id="Id" name="Id" value="<?php echo $row['Id']; ?>">
+											<input type="hidden" id="Id" name="id" value="<?php echo $row['id']; ?>">
 											<p>
-											<label class="label_exclusao"><b>Nome: </b> <?php echo $row['Nome']; ?> </label></p>
+											<label class="label_exclusao"><b>Nome: </b> <?php echo $row['nome']; ?> </label></p>
 											<p>
-											<label class="label_exclusao"><b>Raça: </b><?php echo $row['Raca']; ?></label></p>
+											<label class="label_exclusao"><b>Descrição: </b><?php echo $row['descricao']; ?></label></p>
 											<p>
-											<label class="label_exclusao"><b>Ano de Nascimento: </b><?php echo $row['Ano_nascimento'] ?></label></p>
+											<label class="label_exclusao"><b>Rua: </b><?php echo $row['rua'] ?></label></p>
 											<p>
-											<label class="label_exclusao"><b>Porte: </b><?php echo $row['Porte']; ?></label></p>
+											<label class="label_exclusao"><b>Numero: </b><?php echo $row['numero']; ?></label></p>
 											<p>
 											<input type="submit" value="Excluir" class="w3-btn w3-red" >
-											<input type="button" value="Cancelar" class="w3-btn" onclick="window.location.href='mostrarCachorro.php'"></p>
+											<input type="button" value="Cancelar" class="w3-btn" onclick="window.location.href='mostrarLocal.php'"></p>
 										</form>
 					<?php 
 									}
