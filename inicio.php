@@ -23,6 +23,33 @@
             position: absolute;
             color: gold;
         }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 10%;
+            height: 100%;
+            background-color: #5C4033;
+            z-index: 9999;
+            transition: left 0.3s;
+            border-radius: 0; /* Remova esta propriedade */
+        }
+
+        .menu.show {
+            left: 0;
+        }
+
+        .menu a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            background-color: #3D291F;
+        }
     </style>
 </head>
 <body>
@@ -30,7 +57,6 @@
     <?php require 'conectaBD.php'; ?>
     <!-- CABEÇALHO -->
     <header class="cabecalho">
-        <div class="menu-btn" onclick="toggleMenu()">MENU</div>
         <div class="menu" id="menu">
             <a href="inicio.php">Inicio</a>
             <a href="cadastroUsuario.php">Cadastrar Usuário</a>
@@ -42,24 +68,28 @@
             function toggleMenu() {
                 var menu = document.getElementById("menu");
 
-                if (menu.style.right === "-13%") {
-                    menu.style.right = "0";
-                } else {
-                    menu.style.right = "-13%";
-                }
+                menu.classList.toggle("show");
+            }
+
+            function openModal() {
+                // Implemente aqui a lógica para abrir a janela modal
             }
         </script>
 
         <img class="logo" src="IMG/logo_horizontal.png"/>
+        <div class="center">
+            <button class="brown-button" onclick="openModal()">Filtros</button>
+        </div>
 
         <div class="botao-cabecalho">
             <ul>
-                <li><a href=""><h3>MENU</h3></a></li>
+                <li><a href="#" onclick="toggleMenu()"><h3>MENU</h3></a></li>
                 <li><a href=""><h3>SOBRE</h3></a></li>
                 <li><a href=""><h3>CONTATO</h3></a></li>
             </ul>
         </div>
     </header>
+
 
     <!-- LINHA DE DIVISÃO -->
     <header class="linha-divisao"></header>
@@ -67,9 +97,6 @@
     <!-- Conteúdo Principal: deslocado para direita em 270 pixels quando a sidebar é visível -->
     <div class="w3-main w3-container">
         <div class="w3-panel w3-padding-large w3-card-4 w3-light-dark">
-
-
-
 
             <title>Filtros</title>
             <style>
@@ -103,10 +130,33 @@
 
             .center {
                 text-align: center;
+                position: relative;
             }
 
             .brown-button {
-                background-color: brown;
+                background-color: #5C4033;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                font-size: 16px;
+                cursor: pointer;
+                transform: translateX(-120%);
+            }
+
+            .form-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .submit-button {
+                display: flex;
+                justify-content: center;
+            }
+
+            .submit-button input[type="submit"] {
+                background-color: #5C4033;
                 color: #fff;
                 padding: 10px 20px;
                 border: none;
@@ -114,33 +164,53 @@
                 font-size: 16px;
                 cursor: pointer;
             }
+
             </style>
-            <div class="center">
-                <button class="brown-button" onclick="openModal()">Filtros</button>
-            </div>
 
             <div id="myModal" class="modal">
                 <div class="modal-content">
                     <span class="close" onclick="closeModal()">&times;</span>
                     <form method="POST">
                         <h2>Selecione as opções:</h2>
-                        <label for="opcao1">
-                            <input type="checkbox" name="opcao1" value="1"> Opção 1
-                        </label>
-                        <br>
-                        <label for="opcao2">
-                            <input type="checkbox" name="opcao2" value="2"> Opção 2
-                        </label>
-                        <br>
-                        <label for="opcao3">
-                            <input type="checkbox" name="opcao3" value="3"> Opção 3
-                        </label>
+                        <div class="form-grid">
+                            <label for="opcao1">
+                                <input type="checkbox" name="opcao1" value="1"> Opção 1
+                            </label>
+                            <label for="opcao2">
+                                <input type="checkbox" name="opcao2" value="2"> Opção 2
+                            </label>
+                            <label for="opcao3">
+                                <input type="checkbox" name="opcao3" value="3"> Opção 3
+                            </label>
+                            <label for="opcao4">
+                                <input type="checkbox" name="opcao4" value="4"> Opção 4
+                            </label>
+                            <label for="opcao5">
+                                <input type="checkbox" name="opcao5" value="5"> Opção 5
+                            </label>
+                            <label for="opcao6">
+                                <input type="checkbox" name="opcao6" value="6"> Opção 6
+                            </label>
+                            <label for="opcao7">
+                                <input type="checkbox" name="opcao7" value="7"> Opção 7
+                            </label>
+                            <label for="opcao8">
+                                <input type="checkbox" name="opcao8" value="8"> Opção 8
+                            </label>
+                            <label for="opcao9">
+                                <input type="checkbox" name="opcao9" value="9"> Opção 9
+                            </label>
+                            <label for="opcao10">
+                                <input type="checkbox" name="opcao10" value="10"> Opção 10
+                            </label>
+                        </div>
                         <br><br>
-                        <input type="submit" value="Enviar">
+                        <div class="submit-button">
+                            <input type="submit" value="Enviar">
+                        </div>
                     </form>
                 </div>
             </div>
-
             <script>
                 function openModal() {
                     document.getElementById("myModal").style.display = "block";
@@ -152,8 +222,6 @@
             </script>
         </body>
         </html>
-
-
 
             <h2 class="w3-xxlarge" style="text-align: center">Ajudamos você a encontrar sua próxima viagem!</h2>
 
@@ -176,24 +244,47 @@
 
                 // Faz Select na Base de Dados
 
-                $opcao1 = '';
-                $opcao2 = '';
-                $opcao3 = '';
+                $opcao1 = '1';
+                $opcao2 = '2';
+                $opcao3 = '3';
+                $opcao4 = '4';
+                $opcao5 = '5';
+                $opcao6 = '6';
+                $opcao7 = '7';
+                $opcao8 = '8';
+                $opcao9 = '9';
+                $opcao10 = '10';
 
                 $sql = "SELECT l.id as Id, l.Nome as Nome, l.rua as Rua, l.numero as Numero, l.bairro as Bairro, l.cidade as Cidade, l.estado as Estado, l.foto as Imagem FROM locais l";
 
-    
+                $opcoesSelecionadas = [];
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     // Armazenar os números selecionados
-                    $opcao1 = $_POST[1] ?? '';
-                    $opcao2 = $_POST[2] ?? '';
-                    $opcao3 = $_POST[3] ?? '';
+                    $opcao1 = $_POST['opcao1'] ?? '';
+                    $opcao2 = $_POST['opcao2'] ?? '';
+                    $opcao3 = $_POST['opcao3'] ?? '';
+                    $opcao4 = $_POST['opcao4'] ?? '';
+                    $opcao5 = $_POST['opcao5'] ?? '';
+                    $opcao6 = $_POST['opcao6'] ?? '';
+                    $opcao7 = $_POST['opcao7'] ?? '';
+                    $opcao8 = $_POST['opcao8'] ?? '';
+                    $opcao9 = $_POST['opcao9'] ?? '';
+                    $opcao10 = $_POST['opcao10'] ?? '';
     
                     // Fazer o que desejar com as variáveis $opcao1, $opcao2, $opcao3
                     // Neste exemplo, vamos apenas armazená-las em uma variável
-                    $opcoesSelecionadas = array($opcao1, $opcao2, $opcao3);
-                    
-                    $sql = "SELECT l.id as Id, l.Nome as Nome, l.rua as Rua, l.numero as Numero, l.bairro as Bairro, l.cidade as Cidade, l.estado as Estado, l.foto as Imagem FROM locais l where tipopref in ($opcoesSelecionadas)";
+                    $opcoesSelecionadas = array($opcao1, $opcao2, $opcao3, $opcao4, $opcao5, $opcao6, $opcao7, $opcao8, $opcao9, $opcao10);
+                       // Verificar se o array está vazio
+                    $opcoesSelecionadas = array_filter($opcoesSelecionadas);
+
+                    // Verificar se o array está vazio
+                    if (empty($opcoesSelecionadas)) {
+                        $busca = ''; // Valor padrão quando todos os valores estão vazios
+                    } else {
+                        $busca = implode(', ', array_map('intval', $opcoesSelecionadas));
+                    }
+
+                    $sql = "SELECT l.id as Id, l.Nome as Nome, l.rua as Rua, l.numero as Numero, l.bairro as Bairro, l.cidade as Cidade, l.estado as Estado, l.foto as Imagem FROM locais l where tipopref in ($busca)";
                     
                 }
                 
