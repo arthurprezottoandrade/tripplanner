@@ -1,68 +1,88 @@
 body {
-  margin: auto;
-  padding: auto;
-  height: 100%;
-  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(244, 242, 236);
 }
 
 /* estilo de cabecalho */
 .cabecalho {
-  width: 100%;
-  background-color: white;
-  height: 160px;
+  background-color: rgb(39, 37, 28);
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.menu-btn {
+  position: fixed;
+  top: 2%;
+  right: 0;
+  transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.menu {
+  position: fixed;
+  top: 50%;
+  right: -13%; /* Inicialmente, o menu estará oculto */
+  width: 300px;
+  padding: 10px;
+  border-radius: 50%;
+  transition: right 0.7s;
+}
+
+.menu a {
+  display: block;
+  margin-bottom: 5%;
 }
 
 /* imagem de logo */
 .logo {
-  float: left;
-  padding: 10px;
-  width: 425px;
+  width: 385px;
 }
 
 /* posição de texto MENU SOBRE CONTATO */
 .botao-cabecalho {
-  margin-left: 50px;
-  float: right;
-  width: 55.5%;
-  padding: 50px;
+  display: flex;
+  align-items: center;
 }
 
 /* estilo de texto MENU SOBRE CONTATO */
-.botao-cabecalho ul li {
-  margin: 0px 20px 0px 0px;
-  display: inline-block;
+.botao-cabecalho ul {
+  display: flex;
   list-style: none;
-  text-align: center;
-  color: black;
-  text-decoration: underline none;
+  margin: 0;
+  padding: 0;
+}
+
+.botao-cabecalho ul li {
+  margin-right: 20px;
 }
 
 /* Mudar cor ao passar cursor */
-.botao-cabecalho ul li :hover {
-  color: rgb(197, 146, 83);
-}
-
-/* estilo de link */
-.botao-cabecalho a {
+.botao-cabecalho ul li a {
+  color: rgb(130, 122, 96);
   text-decoration: none;
+  transition: color 0.3s;
 }
 
-/* fonte e tamanho de texto de MENU SOBRE CONTATO */
-.botao-cabecalho h3 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 24px;
+.botao-cabecalho ul li a:hover {
+  color: white;
 }
 
 /* linha horizontal de divisao */
 .linha-divisao {
   width: 100%;
-  background-color: rgb(197, 146, 83);
+  background-color: rgb(36, 34, 26);
   height: 10px;
 }
 
 .formatualiza {
   padding: 3em 1em 8em 1em;
-  background-color: rgb(239, 239, 239);
+  background-color: rgb(244, 242, 236);
   height: 100%;
   text-align: center;
 }
@@ -87,7 +107,7 @@ body {
 
 label {
   text-align: center;
-  color: #c59253;
+  color: rgb(39, 37, 28);
   flex-direction: column;
   display: flex;
   padding: 0.5em 0.5em 0.5em 0.5em;
@@ -159,7 +179,7 @@ input:checked + .slider:before {
   font-family: Arial;
   color: #ffffff;
   font-size: 13px;
-  background-color: #c59253; 
+  background-color: rgb(39, 37, 28); 
   padding: 10px 20px 10px 20px;
   text-decoration: none;
   border: none;
@@ -168,24 +188,29 @@ input:checked + .slider:before {
 
 .botao-atualiza:hover {
   cursor: pointer;
-  background: #99652b;
+  background: rgb(26, 24, 19);
   text-decoration: none;
 }
   
 /* rodapé */
 footer {
-  background-color: white;
-  margin-bottom: 0px;
+  background-color: rgb(39, 37, 28);
+  margin-top: 50px;
+  text-align: center;
+  padding-bottom: 30px;
 }
 
 /* imagem rodapé */
 .img-rodape {
   display: block;
   height: 200px;
-  margin: 20px auto 20px auto;
+  margin: auto;
 }
 
 /* texto rodapé */
 .copyright {
-    text-align: center;
+  font-size: 16px;
+  color: #999;
+  margin: 0;
+  padding: 0;
 }
