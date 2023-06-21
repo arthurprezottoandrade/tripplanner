@@ -129,7 +129,7 @@
                                         $image_base64 = base64_encode(file_get_contents('IMG/'.$name) );
                                         $imagem = 'data:image/'.$imageFileType.';base64,'.$image_base64;
                                         // Inserindo 
-                                        $sql = "UPDATE locais SET nome = '$nome', descricao = '$descricao', rua = '$rua', numero = '$numero' , bairro = '$bairro', cidade = '$cidade', Imagem = '$image_base64' WHERE id = '$id'";
+                                        $sql = "UPDATE locais SET nome = '$nome', descricao = '$descricao', rua = '$rua', numero = '$numero' , bairro = '$bairro', cidade = '$cidade', foto = '$image_base64' WHERE id = '$id'";
                                     }
                                 } else {
                                     $sql = "UPDATE locais SET nome = '$nome', descricao = '$descricao', rua = '$rua', numero = '$numero' , bairro = '$bairro', cidade = '$cidade' WHERE id = '$id'";
