@@ -116,7 +116,7 @@
                     mysqli_query($conn,'SET character_set_client=utf8');
                     mysqli_query($conn,'SET character_set_results=utf8');
 
-                        $sql = "SELECT l.id, l.Nome, l.cidade, l.rua, l.numero, l.bairro, l.estado FROM locais l";
+                        $sql = "SELECT l.id, l.nome, l.cidade, l.rua, l.numero, l.bairro, l.estado,l.descricao FROM locais l";
                         echo "<div class='w3-responsive w3-card-4'>";
                         if ($result = mysqli_query($conn, $sql)) {
                             echo "<table class='w3-table-all'>";
@@ -138,20 +138,22 @@
                                     echo "<td>";
                                     echo $cod;
                                     echo "</td><td>";
-                                    echo $row["Nome"];
+                                    echo $row["nome"];
                                     echo "</td><td>";
-                                    echo $row["Cidade"];
+                                    echo $row["descricao"];
                                     echo "</td><td>";
-                                    echo $row["Rua"];
+                                    echo $row["cidade"];
                                     echo "</td><td>";
-                                    echo $row["Numero"];
+                                    echo $row["rua"];
                                     echo "</td><td>";
-                                    echo $row["Bairro"];
+                                    echo $row["numero"];
                                     echo "</td><td>";
-                                    echo $row["Estado"];
+                                    echo $row["bairro"];
+                                    echo "</td><td>";
+                                    echo $row["cidade"];
                                     echo "</td>";
                     ?>
-                                <!-- Atualizar e Excluir cachorro -->
+                                <td>
                                 <a href='atualizaLocal.php?id=<?php echo $cod; ?>'><img src='IMG/editar.png' title='Editar Local' width='32'></a>
                                 </td><td>
                                 <a href='deletarLocal.php?id=<?php echo $cod; ?>'><img src='IMG/excluir.png' title='Excluir Local' width='32'></a>
