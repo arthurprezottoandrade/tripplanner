@@ -6,6 +6,24 @@
     <link rel="icon" type="image/jpg" href="IMG/logo_transparente.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 
+    <style>
+        .rating {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            text-align: left;
+        }
+        .rating > span {
+            display: inline-block;
+            position: relative;
+            width: 1.1em;
+        }
+        .rating > span:hover:before,
+        .rating > span:hover ~ span:before {
+            content: "\2605";
+            position: absolute;
+            color: gold;
+        }
+    </style>
 </head>
 <body>
     <!-- CONEXÃO COM O BANCO DE DADOS -->
@@ -176,7 +194,6 @@
                     $opcoesSelecionadas = array($opcao1, $opcao2, $opcao3);
                     
                     $sql = "SELECT l.id as Id, l.Nome as Nome, l.rua as Rua, l.numero as Numero, l.bairro as Bairro, l.cidade as Cidade, l.estado as Estado, l.foto as Imagem FROM locais l where tipopref in ($opcoesSelecionadas)";
-
                     
                 }
                 
@@ -185,6 +202,7 @@
                     while ($row = $result->fetch_assoc()) {
                         $id_local = $row['Id'];
                         $nome = $row['Nome'];
+                        $descricao = $row['Descricao'];
                         $cidade = $row['Cidade'];
                         $rua = $row['Rua'];
                         $numero = $row['Numero'];
@@ -194,14 +212,21 @@
                         <div class="card">
                             <div class="container">
                                 <div class="sub-container">
-                                    <div class="fields">
-                                        <h4><b>Nome: <?php echo $nome ?></b></h4>
-                                        <h4><b>Cidade: <?php echo $cidade ?></b></h4>
-                                        <h4><b>Rua: <?php echo $rua ?></b></h4>
-                                        <h4><b>Numero: <?php echo $numero ?></b></h4>
-                                        <h4><b>Bairro: <?php echo $bairro ?></b></h4>
-                                    </div>
                                     <img class="fotoConvertida" src="data:image/png;base64,<?php echo $foto ?>">
+                                    <div class="fields">
+                                        <h4><b><?php echo $nome ?></b></h4>
+                                        <h4><b><?php echo $descricao ?></b></h4>
+                                        <div class="rating">
+                                            <h4>23 Avaliações</h4>
+                                        
+                                            <span>&#x2606;</span>
+                                            <span>&#x2606;</span>
+                                            <span>&#x2606;</span>
+                                            <span>&#x2606;</span>
+                                            <span>&#x2606;</span>
+                                        </div>
+
+                                    </div>
                                 </div>
                                 <a href='avaliaLocal.php?id=<?php echo $id_local ?>'>
                                     <button class="botao-visitado">Marcar local como visitado</button>
