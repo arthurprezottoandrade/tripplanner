@@ -88,7 +88,7 @@
 						$conn = mysqli_connect($servername, $username, $password, $database);
 
 						// ID do registro a ser excluído
-						$id = $_POST['Id'];
+						$id = $_POST['id'];
 
 						// Verifica conexão
 						if (!$conn) {
@@ -96,11 +96,11 @@
 						}
 
 						// Faz DELETE na Base de Dados
-						$sql = "DELETE FROM cachorro WHERE Id = $id";
+						$sql = "DELETE FROM locais WHERE id = $id";
 
 						echo "<div id='resultado'>";
 						if ($result = mysqli_query($conn, $sql)) {
-								echo "Um cachorro excluído!";
+								echo "Um Local excluído!";
 						} else {
 							echo "Erro executando DELETE: " . mysqli_error($conn);
 						}
